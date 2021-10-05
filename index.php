@@ -1,11 +1,6 @@
 <?php
 
-@require_once __DIR__ . '/models/Movie.php';
-
-// dichiarazioni istanze
-
-$movie1 = new Movie('Signore degli Anelli', 2001, 'Peter Jackson', 'EN', "Bilbo Baggins ha deciso di celebrare il suo centoundicesimo compleanno in maniera molto particolare;alla fine della festa, abbandona parenti, amici, conoscenti e il suo affezionato nipote Frodo, cui lascia ogni cosa. Lo stregone Gandalf insiste perché lo hobbit lasci a Frodo anche il suo anello magico, su cui intende tenere un occhio vigile e fare alcune ricerche, perché potrebbe celare un mistero più inquietante di quanto non sembri. E così è; quello di Bilbo è l'Unico Anello, l'Anello per domarli, il cuore del potere del malefico Signore Oscuro Sauron, che sta tornando a tessere le sue trame di conquista e distruzione. Per impedirgli di vedere realizzato il suo sanguinoso disegno, l'anello dovrà essere distrutto, cosa possibile soltanto nella fornace di Monte Fato, dove Sauron, secoli prima, lo forgiò.",);
-var_dump($movie1);
+@require_once __DIR__ . '/data/data.php';
 
 
 ?>
@@ -22,14 +17,20 @@ var_dump($movie1);
 
 <body>
 
-    <!-- stampa istanza 1 -->
+    <!-- stampa istanze -->
+
     <article>
-        <h1> <?= $movie1->title ?></h1>
-        <div>Language:<?= $movie1->language ?></div>
-        <span>Director: <?= $movie1->director ?></span>
-        <time> Year:<?= $movie1->year ?> </time>
-        <p><?= $movie1->description ?> </p>
+        <?php foreach ($movies as $movie) : ?>
+            <h1> <?= $movie->title ?></h1>
+            <div>Language:<?= $movie->language ?></div>
+            <span>Director: <?= $movie->getDirector() ?></span>
+            <time> Year:<?= $movie->year ?> </time>
+            <p><?= $movie->description ?> </p>
+        <? endforeach ?>
     </article>
+
+
+
 
 </body>
 
