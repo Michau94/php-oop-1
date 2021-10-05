@@ -25,7 +25,7 @@
             <div>Language:<?= $movie->language ?></div>
             <span>Director: <?= $movie->getDirector() ?></span>
             <time> Year:<?= $movie->year ?> </time>
-            <p><?= $movie->description ?> </p>
+            <p><?= $movie->getBrief() ?> </p>
         <? endforeach ?>
     </article>
 
