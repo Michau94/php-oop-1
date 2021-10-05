@@ -24,4 +24,9 @@ class Movie
         $this->description = $_description;
         $this->language = $_language;
     }
+
+    public function getDirector()
+    {
+        return $this->director;
+    }
 }
