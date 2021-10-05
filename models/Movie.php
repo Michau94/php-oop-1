@@ -29,4 +29,9 @@ class Movie
     {
         return $this->director;
     }
+
+    public function getBrief($len = 250)
+    {
+        return substr($this->description, 0, $len) . '...';
+    }
 }
